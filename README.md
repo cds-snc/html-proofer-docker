@@ -38,3 +38,16 @@ test:
   script:
     - htmlproofer _site --empty-alt-ignore
 ```
+
+### Circle CI
+
+To use this image in Circle CI, configure a test job in `config.yml` like this:
+
+```yaml
+test:
+    docker:
+      - image: cdssnc/html-proofer
+    steps:
+      - run:
+          name: "Test Html"
+          command: htmlproofer _site --empty-alt-ignore
